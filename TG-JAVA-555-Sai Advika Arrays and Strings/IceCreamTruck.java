@@ -1,22 +1,17 @@
-import java.util.Arrays;
-import java.util.Comparator;
-
 public class IceCreamTruck {
     public static void main(String[] args) {
         String[] flavors = {"Vanilla", "Chocolate", "Strawberry", "Mint", "Cookies & Cream"};
-        Integer[] sales = {25, 40, 15, 30, 20};
+        int[] sales = {25, 40, 15, 30, 20};
 
-        Integer[] indices = {0, 1, 2, 3, 4};
-
-        Arrays.sort(indices, new Comparator<Integer>() {
-            public int compare(Integer i1, Integer i2) {
-                return sales[i2] - sales[i1];
+        for (int i = 0; i < sales.length; i++) {
+            int maxIndex = 0;
+            for (int j = 1; j < sales.length; j++) {
+                if (sales[j] > sales[maxIndex]) {
+                    maxIndex = j;
+                }
             }
-        });
-
-        System.out.println("Flavors ranked by popularity:");
-        for (int i : indices) {
-            System.out.println(flavors[i] + ": " + sales[i] + " scoops");
+            System.out.println(flavors[maxIndex] + ": " + sales[maxIndex] + " scoops");
+            sales[maxIndex] = -1; 
         }
     }
 }
