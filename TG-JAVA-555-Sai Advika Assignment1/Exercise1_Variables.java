@@ -1,4 +1,4 @@
-package com.sssso.training.exercises._20250822;
+
 
 public class Exercise1_Variables {
     public static void main(String[] args) {
@@ -13,3 +13,4 @@ public class Exercise1_Variables {
         System.out.println("Active: " + isActive);
     }
 }
+
